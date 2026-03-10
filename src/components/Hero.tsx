@@ -3,8 +3,10 @@ import { ArrowRight, Download, Terminal, Database, Code, Cpu } from 'lucide-reac
 
 const Hero = () => {
   const handleResumeDownload = () => {
+    // Get the base URL (works for both local and GitHub Pages deployment)
+    const baseUrl = import.meta.env.BASE_URL;
     const link = document.createElement('a');
-    link.href = '/Athul_Resume.pdf'; // Make sure to place resume.pdf in public folder
+    link.href = baseUrl + 'Athul_Resume.pdf';
     link.download = 'Athulkrishna_P_Shijo_Resume.pdf';
     document.body.appendChild(link);
     link.click();
